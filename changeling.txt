@@ -1,0 +1,5 @@
+07/05/2020
+Add: Create the project with Swift
+     Create changelog, readme and licenses file
+     Put them in github as required for backup
+     
