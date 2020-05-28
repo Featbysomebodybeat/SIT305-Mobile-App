@@ -40,12 +40,12 @@ final class MBUtils: NSObject {
             })
             alert.addAction(action)
         }
-        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancel)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
-    //获取头像路径
+    // get icon path
     static func getHeadImagePath(_ fileName: String = "headImage") -> String {
        let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first ?? ""
         let downloadFilePath = cachePath  + "/" + fileName
@@ -56,7 +56,7 @@ final class MBUtils: NSObject {
 }
 
 extension MBUtils {
-    // 计算行数
+    // count lines
     static func getRows(column: Int, amount: Int) -> Int {
         var row = amount / column
         let change = amount % column
@@ -96,7 +96,7 @@ extension MBUtils {
     }
 }
 
-// MARK:----date和String相互转换
+// MARK:----date & String convert
 
 extension MBUtils {
     
@@ -125,7 +125,7 @@ extension MBUtils  {
         return (order != .orderedAscending)
     }
     
-    /// 生成富文本
+    /// generate attributted text
      static func attributedText(fromText text: String, color: UIColor, font: UIFont, lineSpace: CGFloat) -> NSAttributedString {
          
          let style = NSMutableParagraphStyle()
@@ -151,7 +151,7 @@ extension MBUtils {
 }
 
 extension MBUtils {
-    /// 获取隐秘电话号码，例如: "130xxxx1111"
+    /// get invisible tel
        static func securityPhoneNumber(_ phone: String) -> String {
         
            if phone.count < 8 {
