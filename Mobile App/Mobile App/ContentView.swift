@@ -8,14 +8,17 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CircleImage: View {
     var body: some View {
-        Text("Hello, my mobile App!")
+        Image("turlerock")
+        .clipShape(Circle())
+        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+        .shadow(radius: 10)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CircleImage()
     }
 }
