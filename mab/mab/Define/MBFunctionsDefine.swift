@@ -22,3 +22,8 @@ func DPrintWithoutLineBreak(_ items: Any...) {
     #else
     #endif
 }
+
+/// perform delay in main thread
+func delay(seconds: TimeInterval, execute: @escaping ()->Void) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: execute)
+}

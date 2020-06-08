@@ -13,6 +13,8 @@ class MBBaseNaviController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationBar.setBackgroundImage(MBImage.Bar.background.image, for: .default)
+        navigationBar.shadowImage = MBImage.Bar.shadow.image
         // Do any additional setup after loading the view.
     }
     

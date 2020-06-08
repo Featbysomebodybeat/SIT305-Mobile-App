@@ -13,16 +13,8 @@ import UIKit
 enum MBUserDefaultKey: String {
     /// login info
     case userSignInfo = "userSignInfo"
-    /// if first time loeading
-    case firstGuide = "firstGuide"
     /// logged in
     case signedIn = "signedIn"
-    /// promote button
-    case adPromote = "adPromote"
-    
-    case searchHistory = "searchHistory"
-    //user icon
-    case headProfile = "headProfile"
 }
 
 /// UserDefault management
@@ -87,7 +79,6 @@ struct MBUserDefault {
         }else {
             set(value, forKey: key.rawValue)
         }
-//        set(value, forKey: key.rawValue)
     }
     
     /// load save data

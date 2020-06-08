@@ -19,6 +19,7 @@ final class MBUtils: NSObject {
     static let shareInstance = MBUtils()
     /// get root
     static func getRootVC() -> UIViewController? {
+        
         return UIApplication.shared.keyWindow?.rootViewController
     }
     
@@ -40,12 +41,12 @@ final class MBUtils: NSObject {
             })
             alert.addAction(action)
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alert.addAction(cancel)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
-    // get icon path
+    //获取头像路径
     static func getHeadImagePath(_ fileName: String = "headImage") -> String {
        let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first ?? ""
         let downloadFilePath = cachePath  + "/" + fileName
@@ -56,7 +57,7 @@ final class MBUtils: NSObject {
 }
 
 extension MBUtils {
-    // count lines
+    // 计算行数
     static func getRows(column: Int, amount: Int) -> Int {
         var row = amount / column
         let change = amount % column
@@ -96,7 +97,7 @@ extension MBUtils {
     }
 }
 
-// MARK:----date & String convert
+// MARK:----date和String相互转换
 
 extension MBUtils {
     
@@ -125,7 +126,7 @@ extension MBUtils  {
         return (order != .orderedAscending)
     }
     
-    /// generate attributted text
+    /// 生成富文本
      static func attributedText(fromText text: String, color: UIColor, font: UIFont, lineSpace: CGFloat) -> NSAttributedString {
          
          let style = NSMutableParagraphStyle()
@@ -151,7 +152,7 @@ extension MBUtils {
 }
 
 extension MBUtils {
-    /// get invisible tel
+    /// 获取隐秘电话号码，例如: "130xxxx1111"
        static func securityPhoneNumber(_ phone: String) -> String {
         
            if phone.count < 8 {

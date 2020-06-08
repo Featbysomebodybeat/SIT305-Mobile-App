@@ -1,14 +1,14 @@
 //
-//  MBMainTabbarControllerViewController.swift
+//  MBHomeController.swift
 //  mab
 //
-//  Created by Shuo Wang on 24/5/20.
+//  Created by zhengheng on 2020/6/4.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 
-class MBMainTabbarControllerViewController: UITabBarController {
+class MBHomeController: MBBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
