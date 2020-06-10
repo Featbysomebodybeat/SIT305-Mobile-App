@@ -2,7 +2,7 @@
 //  MBBaseWebController.swift
 //  mab
 //
-//  Created by Shuo Wang on 2020/6/10.
+//  Created by Shuo Wang on 10/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

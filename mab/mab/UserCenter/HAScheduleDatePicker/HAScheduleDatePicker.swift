@@ -1,21 +1,21 @@
 //
 //  HAScheduleDatePicker.swift
-//  HealthHaiAn
+//  mab
 //
-//  Created by Leo on 2019/4/15.
-//  Copyright © 2019 Jiangsu Sunny Health Network Technology Co.,Ltd. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 import SwiftDate
 
-/// 排班日期选择(基于SwiftDate)
+/// schedule data pciker
 class HAScheduleDatePicker: UIView {
     
-    /// 日期改变了
+    /// date changed
     var dateDidChanged: ((_ date: Date?)->Void)?
     
-    /// 最多天数
+    /// max date
     @IBInspectable var maxCount: Int = 15
     
     @IBOutlet weak var dateCollection: UICollectionView!
@@ -23,7 +23,7 @@ class HAScheduleDatePicker: UIView {
     
     private let k_dateCell = "HAScheduleDateCollectionCell"
     
-    /// 当前选中的index
+    /// current index
     private var selectedIndex: IndexPath? {
         didSet {
 //            DPrint("currentIndex == \(selectedIndex)")
@@ -39,26 +39,26 @@ class HAScheduleDatePicker: UIView {
         }
     }
     
-    /// 用于接收从xib加载的view
+    /// recieve xib view
     private lazy var xibView: UIView! = {
         return Bundle.main.loadNibNamed("HAScheduleDatePicker", owner: self, options: nil)?.first as! UIView
     }()
     
-    /// 有排班的日期
+    /// enable dates
     var enableDates = Array<String>() {
         didSet {
             createDates()
         }
     }
     
-    /// 所有日期数组
+    /// all date data
     private var allDates = Array<PickerDateModel>() {
         didSet {
             dateCollection.reloadData()
         }
     }
     
-    /// 点击全部按钮
+    /// click all buttons
     @IBAction private func clickAllButton(_ sender: Any) {
         selectedIndex = nil
         dateDidChanged?(nil)
@@ -89,7 +89,7 @@ class HAScheduleDatePicker: UIView {
 // MARK: - Functions
 extension HAScheduleDatePicker {
     
-    /// 初始化
+    /// inital
     private func setup() {
         
         addSubview(xibView)
@@ -98,7 +98,7 @@ extension HAScheduleDatePicker {
         createDates()
     }
     
-    /// 创建日期数据
+    /// create date data
     private func createDates() {
         allDates = MBDateManager.getDatesAfterToday(for: maxCount).map({ (date) -> PickerDateModel in
             return PickerDateModel(date: date, isEnable: true)
@@ -108,10 +108,10 @@ extension HAScheduleDatePicker {
     
 }
 
-// MARK: - collection 数据源 & 代理
+// MARK: - collection
 extension HAScheduleDatePicker: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    // MARK: 数据源
+    // MARK: data
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allDates.count
     }
@@ -122,7 +122,7 @@ extension HAScheduleDatePicker: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
     
-    // MARK: 代理
+    // MARK: proxy
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
 //        DPrint("1. \(indexPath) == shouldHighlightItem")
         let model = allDates[indexPath.item]

@@ -21,7 +21,7 @@ class MBBaseController: UIViewController, MBStoryboardable {
 //        navigationController?.navigationBar.isHidden = true
     }
     
-    /// 设置返回按钮
+    /// set back button
     func setBackItem() {
         
         addLeftNaviBarButton(image: nil, title: "Back", action: #selector(backAction))
@@ -43,7 +43,7 @@ class MBBaseController: UIViewController, MBStoryboardable {
         
     }
     
-    /// 点击返回按钮操作，子类可重写改方法实现自定义跳转
+    /// back action
     @objc func backAction() {
         navigationController?.popViewController(animated: true)
     }

@@ -1,14 +1,14 @@
 //
 //  GMPresentationAnimator.swift
-//  TestDemo
+//  mab
 //
-//  Created by Leo on 2018/11/1.
-//  Copyright © 2018 Leo. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 
-/// Modal动画控制类
+/// Modal animation controller
 class GMPresentationAnimator: NSObject {
     
     private var isPresentation: Bool
@@ -27,12 +27,12 @@ class GMPresentationAnimator: NSObject {
 
 extension GMPresentationAnimator: UIViewControllerAnimatedTransitioning {
     
-    // 设置动画时长
+    // set transition duration
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.32
     }
     
-    // 设置动画
+    // set animation
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let key = isPresentation ? UITransitionContextViewControllerKey.to : UITransitionContextViewControllerKey.from
         

@@ -1,14 +1,14 @@
 //
 //  HAScheduleDateCollectionCell.swift
-//  HealthHaiAn
+//  mab
 //
-//  Created by Leo on 2019/4/15.
-//  Copyright © 2019 Jiangsu Sunny Health Network Technology Co.,Ltd. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 
-/// 排班日期选择 cell
+/// schdule date collection cell
 class HAScheduleDateCollectionCell: UICollectionViewCell {
 
     var dateModel = PickerDateModel() {
@@ -24,9 +24,9 @@ class HAScheduleDateCollectionCell: UICollectionViewCell {
         }
     }
     
-    /// 星期
+    /// week
     @IBOutlet private var weekDayLabel: UILabel!
-    /// 日期
+    /// date
     @IBOutlet private var dayLabel: UILabel!
     
     override var isSelected: Bool {
@@ -41,7 +41,7 @@ class HAScheduleDateCollectionCell: UICollectionViewCell {
         
     }
     
-    /// 更新数据
+    /// update data
     private func updateState() {
         guard let tmpDate = dateModel.date else {
             return

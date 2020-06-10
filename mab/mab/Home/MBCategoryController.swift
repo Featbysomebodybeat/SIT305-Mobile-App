@@ -2,7 +2,7 @@
 //  MBCategoryController.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/10.
+//  Created by Shuo Wang on 10/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class MBCategoryController: MBBaseController {
     /// list
     @IBOutlet weak var listView: UITableView!
     
-    private var categories = ["分类1", "分类2"]
+    private var categories = ["Category 1", "Category2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,53 +1,52 @@
 //
 //  GMLabel.swift
-//  HealthHaiAn
+//  mab
 //
-//  Created by Leo on 2019/4/9.
-//  Copyright © 2019 Jiangsu Sunny Health Network Technology Co.,Ltd. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
-//  该label集成了圆角，描边，阴影，渐变背景色等属性，均可在xib上设置
 
 import UIKit
 
 //@IBDesignable
 class GMLabel: UILabel {
 
-    /// 圆角
+    /// radius
     @IBInspectable var radius: CGFloat = 0.0
-    /// 描边宽度
+    /// border width
     @IBInspectable var borderWidth: CGFloat = 0.0
-    /// 描边颜色
+    /// border color
     @IBInspectable var borderColor: UIColor = .darkGray
-    /// 阴影颜色
+    /// shadow color
     @IBInspectable var shadowsColor: UIColor = UIColor.black
-    /// 阴影偏移量
+    /// shadow offset
     @IBInspectable var shadowsOffset: CGSize = CGSize(width: 0, height: 0)
-    /// 阴影透明度
+    /// shadow opacity
     @IBInspectable var shadowOpacity: Float = 0
-    /// 阴影半径
+    /// shadow radius
     @IBInspectable var shadowRadius: CGFloat = 6
     
-    /** --- 背景渐变色相关 --- */
-    /// 渐变色初始色
+    /** --- background color gradient  --- */
+    /// gradient start
     @IBInspectable var gradientStartColor: UIColor?
-    /// 渐变色结束色
+    /// gradient end
     @IBInspectable var gradientEndColor: UIColor?
-    /// 背景渐变色
+    /// background color gradient
     var gradientColors = Array<UIColor>()
-    /* 渐变起始和结束位置point值坐标解释
+    /* position explanation
      (0, 0)|--------|(1, 0)
      |        |
      |        |
      (0, 1)|--------|(1, 1)
      */
-    /// 渐变开始坐标
+    /// start point
     @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.5, y: 0)
-    /// 渐变结束坐标
+    /// end point
     @IBInspectable var endPoint: CGPoint = CGPoint(x: 0.5, y: 1)
     
-    /// 渐变色layer
+    /// gradient layer
     private var gradientLayer = CAGradientLayer()
-    /** --- 背景渐变色相关 --- */
+    /** --- background color gradient  --- */
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -55,7 +54,7 @@ class GMLabel: UILabel {
         setGradientLayer()
     }
     
-    /// 设置背景渐变色
+    /// set gradient layer
     private func setGradientLayer() {
         guard gradientColors.count > 0 || (gradientStartColor != nil && gradientEndColor != nil) else {
             return
@@ -80,7 +79,7 @@ class GMLabel: UILabel {
         gradientLayer.frame = bounds
     }
     
-    /// 设置圆角、描边、阴影
+    /// set corner radius border
     fileprivate func setCornerRadiusAndBorder() {
         
         if radius > 0 {

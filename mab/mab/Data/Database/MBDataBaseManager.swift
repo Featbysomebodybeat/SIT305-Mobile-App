@@ -2,7 +2,7 @@
 //  MBDataBaseManager.swift
 //  mab
 //
-//  Created by Shuo Wang on 2020/6/1.
+//  Created by Shuo Wang on 1/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

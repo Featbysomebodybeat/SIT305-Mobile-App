@@ -1,21 +1,21 @@
 //
 //  GMPresentationController.swift
-//  TestDemo
+//  mab
 //
-//  Created by Leo on 2018/11/1.
-//  Copyright © 2018 Leo. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 
-/// Modal跳转中转控制器
+/// Modal transfer
 class GMPresentationController: UIPresentationController {
     
     private var alertSize: CGSize
     private var alertPosition: GMPresentationPosition
     private var needFocusOn: Bool
     private var customY: CGFloat
-    /// 弹框预想的位置
+    /// frame present position
     override var frameOfPresentedViewInContainerView: CGRect {
         var frame: CGRect = .zero
         frame.size = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerView!.bounds.size)
@@ -46,11 +46,11 @@ class GMPresentationController: UIPresentationController {
         setupDimmingView()
     }
     
-    /// 弹出前
+    /// before presentation
     override func presentationTransitionWillBegin() {
-        // 插入背景
+        // insert background
         containerView?.insertSubview(dimmingView, at: 0)
-        /// 给背景添加自动布局
+        /// auto add layout
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimmingView]|", options: [], metrics: nil, views: ["dimmingView": dimmingView!]))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[dimmingView]|", options: [], metrics: nil, views: ["dimmingView": dimmingView!]))
         
@@ -65,7 +65,7 @@ class GMPresentationController: UIPresentationController {
         
     }
     
-    /// 消失前
+    /// before dismiss
     override func dismissalTransitionWillBegin() {
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 0.0
@@ -93,13 +93,13 @@ class GMPresentationController: UIPresentationController {
 }
 
 private extension GMPresentationController {
-    /// 设置半透明背景
+    /// setting dimming
     func setupDimmingView() {
         dimmingView = UIView()
         dimmingView.translatesAutoresizingMaskIntoConstraints = false
         dimmingView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
         dimmingView.alpha = 0.0
-        // 添加手势
+        // add recognizer
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:)))
         dimmingView.addGestureRecognizer(recognizer)
     }

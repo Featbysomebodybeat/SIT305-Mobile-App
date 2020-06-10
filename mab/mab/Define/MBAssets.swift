@@ -2,13 +2,13 @@
 //  MBAssets.swift
 //  mab
 //
-//  Created by Shuo Wang on 2020/6/2.
+//  Created by Shuo Wang on 2/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 
-// MARK: - 颜色
+// MARK: - color
 struct MBColor {
     private init() {}
     static let mainTint = UIColor(hex: "#8EC63F")
@@ -22,7 +22,7 @@ struct MBColor {
     
 }
 
-// MARK: - 字号
+// MARK: - font
 struct MBFont {
     enum Sys: CGFloat {
         case micro = 10
@@ -38,7 +38,7 @@ struct MBFont {
     }
 }
 
-// MARK: - 图片
+// MARK: - image
 struct MBImage {
     
     enum Bar: String {
@@ -47,7 +47,7 @@ struct MBImage {
         case background = "bar_background"
         case shadow = "bar_shadow"
         
-        /// 获取对应的图片
+        /// get image
         var image: UIImage? { return UIImage(named: self.rawValue) }
     }
     
@@ -55,22 +55,22 @@ struct MBImage {
         case iconHolder = "icon_holder"
 
         
-        /// 获取对应的图片
+        /// get image
         var image: UIImage? { return UIImage(named: self.rawValue) }
     }
     
-    /// 空内容图片
+    /// empty the data
     enum EmptyData: String {
         case noNetwork = "empty_no_network"
 
         
-        /// 获取对应的图片
+        /// get image
         var image: UIImage? { return UIImage(named: self.rawValue) }
     }
     
 }
 
-// MARK: - 资源路径
+// MARK: - resource path
 struct MBSourcePath {
     private init(){}
     /// loading图片

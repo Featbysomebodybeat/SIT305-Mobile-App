@@ -2,22 +2,22 @@
 //  MBDateManager.swift
 //  mab
 //
-//  Created by Shuo Wang on 2020/6/2.
+//  Created by Shuo Wang on 2/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
 import SwiftDate
 
-/// 日期管理类(基于SwiftDate)
+/// data management
 class MBDateManager: NSObject {
     
-    /// 获取今天以后后的多少天的日期数组
+    /// get date data
     static func getDatesAfterToday(for days: Int, includeToday flag: Bool = true) -> Array<Date> {
         return getDates(after: Date(), for: days, includeTargetDay: flag)
     }
     
-    /// 获取指定日期后的多少天的日期数组
+    /// get dates
     static func getDates(after startDate: Date, for days: Int, includeTargetDay flag: Bool = true) -> Array<Date> {
         var tmpDates = Array<Date>()
         for i in 0..<days {
@@ -27,7 +27,7 @@ class MBDateManager: NSObject {
         return tmpDates
     }
     
-    /// 获取今天所在的一周的日期
+    /// get the next week dates
     static func getCurrentWeekDates() -> Array<Date> {
         var tmpDates = Array<Date>()
         let startDate = getStartDateOfThisWeek()
@@ -39,22 +39,22 @@ class MBDateManager: NSObject {
         return tmpDates
     }
     
-    /// 获取本周的第一天(周日)
+    /// get started date of the week
     static func getStartDateOfThisWeek() -> Date {
         return getStartDateOf(Date())
     }
     
-    /// 获取本周的最后一天(周六)
+    /// get the end date of the week
     static func getEndDateOfThisWeek() -> Date {
         return getEndDateOf(Date())
     }
     
-    /// 获取某一天所在星期的第一天(周日)
+    /// get a dat
     static func getStartDateOf(_ date: Date) -> Date {
         return date.dateAt(.startOfWeek)
     }
     
-    /// 获取某一天所在星期的最后一天(周六)
+    /// get end date
     static func getEndDateOf(_ date: Date) -> Date {
         return getStartDateOf(date) + 6.days
     }

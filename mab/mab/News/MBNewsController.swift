@@ -2,7 +2,7 @@
 //  MBNewsController.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/4.
+//  Created by Shuo Wang on 4/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

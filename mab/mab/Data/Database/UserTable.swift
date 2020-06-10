@@ -2,7 +2,7 @@
 //  UserInfo.swift
 //  mab
 //
-//  Created by Shuo Wang on 2020/6/2.
+//  Created by Shuo Wang on 9/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

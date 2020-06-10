@@ -1,6 +1,27 @@
 07/05/2020
-Add: Create the project with Swift
-     Create changelog, readme and licenses file
-     Put them in github as required for backup
+Add:	Create the project with Swift
+     	Create changelog, readme and licenses file
+     	Put them in GitHub as required for backup
      
 
+10/05/2020
+Add: 	The page and layout of the project
+	Download Cocoa pod as third party kit for project
+	Started to design the function and documenting	
+	
+24/05/2020
+Add:	The database file created by Navicat
+	Encountered the problem of database 'SQLite'
+
+
+31/05/2020
+Fixed:	Fixed the database issue
+
+07/06/2020
+Finished:Database was made up and insert it to the project
+
+09/06/2020
+Finished:The main page and booking completed
+
+10/06/2020
+Finished:The project detail finished and some tiny bugs fixed

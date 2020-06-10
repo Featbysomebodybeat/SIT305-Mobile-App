@@ -2,7 +2,7 @@
 //  Schedules.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/9.
+//  Created by Shuo Wang on 9/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

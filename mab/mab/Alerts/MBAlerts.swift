@@ -2,7 +2,7 @@
 //  MBAlerts.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/2.
+//  Created by Shuo Wang on 4/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ final class MBAlerts {
 
     static private var loadingView: MBProgressHUD!
     
-    /// 显示toast
+    /// show toast
     static private func showToast(on view: UIView, text: String, isOnBottom: Bool, delay: TimeInterval = 1.5) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = .text
@@ -28,7 +28,7 @@ final class MBAlerts {
 }
 
 extension MBAlerts {
-    /// 在当前window上弹框
+    /// show toast on windows
     static func showToastOnWindow(_ text: String, delay: TimeInterval = 2) {
         guard let window = UIApplication.shared.keyWindow else {
             return
@@ -36,7 +36,7 @@ extension MBAlerts {
         showToast(on: window, text: text, isOnBottom: true, delay: delay)
     }
     
-    /// 在当前window上弹框（center）
+    /// centre the toast
     static func showCenterToastOnWindow(_ text: String, delay: TimeInterval = 2) {
         guard let window = UIApplication.shared.keyWindow else {
             return
@@ -44,18 +44,18 @@ extension MBAlerts {
         showToast(on: window, text: text, isOnBottom: false, delay: delay)
     }
     
-    /// 在指定view上弹框
+    /// show specific toast
     static func showToast(on view: UIView, text: String, delay: TimeInterval = 2) {
         showToast(on: view, text: text, isOnBottom: true, delay: delay)
     }
     
-    /// 在指定view上弹框（center）
+    /// show centre toast
     static func showCenterToast(on view: UIView, text: String, delay: TimeInterval = 2) {
         showToast(on: view, text: text, isOnBottom: false, delay: delay)
     }
     
     
-    /// 在window上显示加载
+    /// loading
     static func showLoading() {
         guard let window = UIApplication.shared.keyWindow else {
             return
@@ -63,7 +63,7 @@ extension MBAlerts {
         showLoading(on: window)
     }
     
-    /// 在view上显示加载
+    /// show loading in the view
     static func showLoading(on view: UIView) {
         if loadingView != nil && view.subviews.contains(loadingView!) {
             loadingView?.isHidden = false
@@ -77,7 +77,7 @@ extension MBAlerts {
         }
     }
     
-    /// 隐藏加载
+    /// hide loading
     static func hideLoading() {
         DispatchQueue.main.async {
             loadingView.hide(animated: true)

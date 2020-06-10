@@ -2,7 +2,7 @@
 //  MBTitleArrowCell.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/5.
+//  Created by Shuo Wang on 5/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 

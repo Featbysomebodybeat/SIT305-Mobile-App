@@ -2,7 +2,7 @@
 //  MBSchedulesController.swift
 //  mab
 //
-//  Created by zhengheng on 2020/6/10.
+//  Created by Shuo Wang on 10/6/20.
 //  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
@@ -13,14 +13,14 @@ class MBSchedulesController: MBBaseController {
     var hos = Hospital()
     var categoty = ""
     
-    /// 日期选择容器
+    /// data picker
     @IBOutlet private var datePicker: HAScheduleDatePicker!
     /// listView
     @IBOutlet private var listView: UITableView!
         
     private var displaySchedules = Array<Schedule>()
         
-    /// 当前选中的日期
+    /// current selected date
     private var selectedDate: Date?
     
     override func viewDidLoad() {
@@ -34,11 +34,11 @@ class MBSchedulesController: MBBaseController {
 //        listView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         datePicker.dateDidChanged = { [unowned self] (date) in
-            DPrint("选中了\(date)")
+            DPrint("select\(date)")
             self.displaySchedules.removeAll()
             var dateStr = ""
             if date != nil {
-                dateStr = date?.toString("yyyy-MM-dd") ?? ""
+                dateStr = date?.toString("dd-MM-yyyy") ?? ""
             }
             self.getSchedules(dateStr)
         }

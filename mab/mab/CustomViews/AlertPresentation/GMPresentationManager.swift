@@ -1,9 +1,9 @@
 //
 //  GMPresentationManager.swift
-//  TestDemo
+//  mab
 //
-//  Created by Leo on 2018/11/1.
-//  Copyright © 2018 Leo. All rights reserved.
+//  Created by Shuo Wang on 4/6/20.
+//  Copyright © 2020 Shuo Wang. All rights reserved.
 //
 
 import UIKit
