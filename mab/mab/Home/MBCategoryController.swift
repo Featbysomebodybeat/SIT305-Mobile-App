@@ -15,7 +15,7 @@ class MBCategoryController: MBBaseController {
     /// list
     @IBOutlet weak var listView: UITableView!
     
-    private var categories = ["Category 1", "Category2"]
+    private var categories = ["General", "Consulting", "Nursing", "Pharmacy", "Allied", "Skin Cancer", "Cosmetic", "Pathology"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

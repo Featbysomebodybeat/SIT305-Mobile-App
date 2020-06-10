@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+caclass AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
@@ -28,22 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
-    /// init
+    /// initial
     private func setup() {
-        // 加载空白跟控制器，处理预加载逻辑
+        // load
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = MBRootController.instanceFromStoryboard(named: MBStoryboard.main)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }
     
-    /// 切换到用户登录注册页面
+    /// switch to sign
     func switchToSign() {
         let signNav = MBSignNavigationController.instanceFromStoryboard(named: MBStoryboard.sign)
         self.window?.rootViewController = signNav
     }
     
-    /// 切换到app主页面
+    /// switch to main
     func switchToMainTab() {
         self.window?.rootViewController = mainVC
     }

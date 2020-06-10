@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="639.13043478260875" y="95.758928571428569"/>
         </scene>
-        <!--排班-->
+        <!--Appointment-->
         <scene sceneID="u2Y-xm-zCI">
             <objects>
-                <viewController storyboardIdentifier="MBSchedulesController" title="排班" id="CdI-ac-3Ln" customClass="MBSchedulesController" customModule="mab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBSchedulesController" title="Appointment" id="CdI-ac-3Ln" customClass="MBSchedulesController" customModule="mab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="05x-2Z-3hW"/>
                         <viewControllerLayoutGuide type="bottom" id="XFq-05-o9M"/>

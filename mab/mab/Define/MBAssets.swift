@@ -73,7 +73,7 @@ struct MBImage {
 // MARK: - resource path
 struct MBSourcePath {
     private init(){}
-    /// loading图片
+    /// loading gid
     static var loadingGif: String? {return Bundle.main.path(forResource: "local_loading", ofType: "gif")}
     static var refreshGif: String? {return Bundle.main.path(forResource: "local_fefresh", ofType: "gif")}
 }
