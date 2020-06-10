@@ -14,7 +14,7 @@ class MBBaseController: UIViewController, MBStoryboardable {
         super.viewDidLoad()
         
         setup()
-//        setBackItem()
+        setBackItem()
     }
     
     func setup() {
@@ -23,20 +23,23 @@ class MBBaseController: UIViewController, MBStoryboardable {
     
     /// 设置返回按钮
     func setBackItem() {
-        if let count = navigationController?.viewControllers.count, count > 1 {
-            let backbutton = GMButton(frame: CGRect(x: 20, y: 50, width: 36, height: 36))
-            backbutton.setBackgroundImage(MBImage.Bar.naviBack.image, for: .normal)
-//            backbutton.setImage(MBImage.Bar.naviBack.image, for: .normal)
-            backbutton.backgroundColor = UIColor.white
-            backbutton.radius = 18
-            backbutton.shadowOffset = CGSize(width: 0, height: 0)
-            backbutton.shadowColor = MBColor.textDark
-            backbutton.shadowOpacity = 0.2
-            backbutton.shadowRadius = 3
-            backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-            
-            view.addSubview(backbutton)
-        }
+        
+        addLeftNaviBarButton(image: nil, title: "Back", action: #selector(backAction))
+        
+//        if let count = navigationController?.viewControllers.count, count > 1 {
+//            let backbutton = GMButton(frame: CGRect(x: 20, y: 50, width: 36, height: 36))
+//            backbutton.setBackgroundImage(MBImage.Bar.naviBack.image, for: .normal)
+////            backbutton.setImage(MBImage.Bar.naviBack.image, for: .normal)
+//            backbutton.backgroundColor = UIColor.white
+//            backbutton.radius = 18
+//            backbutton.shadowOffset = CGSize(width: 0, height: 0)
+//            backbutton.shadowColor = MBColor.textDark
+//            backbutton.shadowOpacity = 0.2
+//            backbutton.shadowRadius = 3
+//            backbutton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+//
+//            view.addSubview(backbutton)
+//        }
         
     }
     
@@ -49,8 +52,12 @@ class MBBaseController: UIViewController, MBStoryboardable {
         navigationController?.pushViewController(vc, animated: animated)
     }
     
-    func pop(animated: Bool = true) {
-        navigationController?.popViewController(animated: animated)
+    func pop(animated: Bool = true, toRoot: Bool = false) {
+        if toRoot {
+            navigationController?.popToRootViewController(animated: animated)
+        }else {
+            navigationController?.popViewController(animated: animated)
+        }
     }
     
 }

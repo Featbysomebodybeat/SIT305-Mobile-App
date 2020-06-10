@@ -68,16 +68,13 @@ extension MBDatabaseManager {
             
             let news = db.executeUpdate("CREATE TABLE IF NOT EXISTS news (newsId TEXT NOT NULL, date TEXT NOT NULL, title TEXT NOT NULL, channel TEXT NOT NULL, desc TEXT)", withArgumentsIn: [])
             
-            if !users || !hospitals || !schedules || !news {
+            let registers = db.executeUpdate("CREATE TABLE IF NOT EXISTS registers (userName TEXT NOT NULL, userPhone TEXT NOT NULL, hosName TEXT NOT NULL, hosCode TEXT NOT NULL, docName TEXT NOT NULL, date TEXT NOT NULL, category TEXT NOT NULL)", withArgumentsIn: [])
+            
+            if !users || !hospitals || !schedules || !news || !registers {
                 rollback.pointee = true
                 completion?(false)
                 return
             }
-            
-            // insert datas
-//            db.executeUpdate("INSERT INTO users (name, phone, password, medicare) VALUES (?, ?, ?, ?);", withArgumentsIn: ["HENG Z", "13666666666", "123456", "NU03678930"])
-//            db.executeUpdate("INSERT INTO hospitals (hosName, hosCode, address, tel) VALUES (?, ?, ?, ?);", withArgumentsIn: ["Tower Hospital", "03001", "L.A. Apple Street", "080-34567"])
-//            db.executeUpdate("INSERT INTO schedules (date, hosCode, docName, depCode) VALUES (?, ?, ?, ?);", withArgumentsIn: ["2020-06-07", "03001", "SAN ZHANG", "as"])
             completion?(true)
             
         }

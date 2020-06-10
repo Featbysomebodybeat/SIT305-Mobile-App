@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2C084224907DE300D0ED39 /* MBSchedulesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C084124907DE300D0ED39 /* MBSchedulesController.swift */; };
+		6E2C084824907F3000D0ED39 /* HAScheduleDateCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C084424907F3000D0ED39 /* HAScheduleDateCollectionCell.xib */; };
+		6E2C084924907F3000D0ED39 /* HAScheduleDateCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C084524907F3000D0ED39 /* HAScheduleDateCollectionCell.swift */; };
+		6E2C084A24907F3000D0ED39 /* HAScheduleDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C084624907F3000D0ED39 /* HAScheduleDatePicker.swift */; };
+		6E2C084B24907F3000D0ED39 /* HAScheduleDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C084724907F3000D0ED39 /* HAScheduleDatePicker.xib */; };
+		6E2C0853249081FF00D0ED39 /* MBDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C0852249081FF00D0ED39 /* MBDateManager.swift */; };
+		6E2C0855249088E200D0ED39 /* MBConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C0854249088E200D0ED39 /* MBConfirmController.swift */; };
+		6E2C085724908A0D00D0ED39 /* MBOrderResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C085624908A0D00D0ED39 /* MBOrderResultController.swift */; };
+		6E2C08592490984500D0ED39 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C08582490984500D0ED39 /* Register.swift */; };
 		6E2F52D6248E25A7001B6013 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E44280F248790D200B62372 /* libsqlite3.0.tbd */; };
 		6E58A7D1248FB9DB0059CA3E /* Hospitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E58A7D0248FB9DB0059CA3E /* Hospitals.swift */; };
 		6E58A7D3248FBE7C0059CA3E /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E58A7D2248FBE7C0059CA3E /* Schedules.swift */; };
@@ -116,6 +125,15 @@
 
 /* Begin PBXFileReference section */
 		0A913E9917EE529EFB34B50C /* Pods_mab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2C084124907DE300D0ED39 /* MBSchedulesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBSchedulesController.swift; sourceTree = "<group>"; };
+		6E2C084424907F3000D0ED39 /* HAScheduleDateCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HAScheduleDateCollectionCell.xib; sourceTree = "<group>"; };
+		6E2C084524907F3000D0ED39 /* HAScheduleDateCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAScheduleDateCollectionCell.swift; sourceTree = "<group>"; };
+		6E2C084624907F3000D0ED39 /* HAScheduleDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HAScheduleDatePicker.swift; sourceTree = "<group>"; };
+		6E2C084724907F3000D0ED39 /* HAScheduleDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HAScheduleDatePicker.xib; sourceTree = "<group>"; };
+		6E2C0852249081FF00D0ED39 /* MBDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBDateManager.swift; sourceTree = "<group>"; };
+		6E2C0854249088E200D0ED39 /* MBConfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBConfirmController.swift; sourceTree = "<group>"; };
+		6E2C085624908A0D00D0ED39 /* MBOrderResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBOrderResultController.swift; sourceTree = "<group>"; };
+		6E2C08582490984500D0ED39 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		6E44280A248785D500B62372 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		6E44280F248790D200B62372 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		6E58A7D0248FB9DB0059CA3E /* Hospitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospitals.swift; sourceTree = "<group>"; };
@@ -241,9 +259,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E2C084324907F2F00D0ED39 /* HAScheduleDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				6E2C084424907F3000D0ED39 /* HAScheduleDateCollectionCell.xib */,
+				6E2C084524907F3000D0ED39 /* HAScheduleDateCollectionCell.swift */,
+				6E2C084624907F3000D0ED39 /* HAScheduleDatePicker.swift */,
+				6E2C084724907F3000D0ED39 /* HAScheduleDatePicker.xib */,
+			);
+			path = HAScheduleDatePicker;
+			sourceTree = "<group>";
+		};
+		6E2C0851249081E300D0ED39 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6E5A5EBB2484EFCA00FB8C95 /* MBDataBaseManager.swift */,
+				6E58A7D0248FB9DB0059CA3E /* Hospitals.swift */,
+				6E7E2E012485DCAC00F39344 /* UserTable.swift */,
+				6E58A7D2248FBE7C0059CA3E /* Schedules.swift */,
+				6E58A7D4248FC53B0059CA3E /* News.swift */,
+				6E2C08582490984500D0ED39 /* Register.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		6E59428B24887E1E0094B328 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				6E2C084324907F2F00D0ED39 /* HAScheduleDatePicker */,
 				6E5A4FF82489E812003ABE59 /* Cells */,
 				6E59428C24887E370094B328 /* UserCenter.storyboard */,
 				6E59428E24887F050094B328 /* MBUserCenterController.swift */,
@@ -258,6 +301,9 @@
 				6E5942A22488F0540094B328 /* MBHomeController.swift */,
 				6E657C6D248FEA17009AE47C /* MBHospitalListController.swift */,
 				6E657C6F248FEB8E009AE47C /* MBCategoryController.swift */,
+				6E2C084124907DE300D0ED39 /* MBSchedulesController.swift */,
+				6E2C0854249088E200D0ED39 /* MBConfirmController.swift */,
+				6E2C085624908A0D00D0ED39 /* MBOrderResultController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -503,13 +549,10 @@
 		6EAE50ED247A6E11005C169E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6E5A5EBB2484EFCA00FB8C95 /* MBDataBaseManager.swift */,
-				6E58A7D0248FB9DB0059CA3E /* Hospitals.swift */,
-				6E7E2E012485DCAC00F39344 /* UserTable.swift */,
-				6E58A7D2248FBE7C0059CA3E /* Schedules.swift */,
-				6E58A7D4248FC53B0059CA3E /* News.swift */,
+				6E2C0851249081E300D0ED39 /* Database */,
 				6EAE50EE247A6E20005C169E /* MBUserDefault.swift */,
 				6E7E2E0D248637B100F39344 /* MBUserCenter.swift */,
+				6E2C0852249081FF00D0ED39 /* MBDateManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -685,6 +728,7 @@
 			files = (
 				6E657CB6248FF3B5009AE47C /* util.js in Resources */,
 				6E657CCD248FF3B5009AE47C /* _wrapper.scss in Resources */,
+				6E2C084824907F3000D0ED39 /* HAScheduleDateCollectionCell.xib in Resources */,
 				6E657CCB248FF3B5009AE47C /* _mixins.scss in Resources */,
 				6E657CB2248FF3B5009AE47C /* overlay.png in Resources */,
 				6E657CC1248FF3B5009AE47C /* fontawesome-webfont.eot in Resources */,
@@ -709,6 +753,7 @@
 				6E657CCF248FF3B5009AE47C /* _table.scss in Resources */,
 				6E657CB9248FF3B5009AE47C /* skel.min.js in Resources */,
 				E5BA85C6247A540500AAECDB /* Assets.xcassets in Resources */,
+				6E2C084B24907F3000D0ED39 /* HAScheduleDatePicker.xib in Resources */,
 				6E657CB5248FF3B5009AE47C /* font-awesome.min.css in Resources */,
 				6E657CD7248FF3B5009AE47C /* main.scss in Resources */,
 				6E657CD8248FF3B5009AE47C /* _typography.scss in Resources */,
@@ -800,17 +845,21 @@
 				6E58A7D5248FC53B0059CA3E /* News.swift in Sources */,
 				6EAE50DB247A675A005C169E /* MBBaseNaviController.swift in Sources */,
 				6E58A7D1248FB9DB0059CA3E /* Hospitals.swift in Sources */,
+				6E2C084924907F3000D0ED39 /* HAScheduleDateCollectionCell.swift in Sources */,
 				6E5A5EBC2484EFCA00FB8C95 /* MBDataBaseManager.swift in Sources */,
 				6EAE510A247A6FA2005C169E /* ArrayExtension.swift in Sources */,
+				6E2C08592490984500D0ED39 /* Register.swift in Sources */,
 				6EAE50E0247A67AE005C169E /* MBMainTabbarController.swift in Sources */,
 				6E7E2E1324863F8100F39344 /* MBAlerts.swift in Sources */,
 				6E5A4FFB2489E845003ABE59 /* MBUcUserInfoCell.swift in Sources */,
+				6E2C0853249081FF00D0ED39 /* MBDateManager.swift in Sources */,
 				6E7E2E08248636DE00F39344 /* MBSignNavigationController.swift in Sources */,
 				6EAE5103247A6FA2005C169E /* UIImageExtension.swift in Sources */,
 				6EAE510B247A6FA2005C169E /* NotificationExtension.swift in Sources */,
 				6EAE5105247A6FA2005C169E /* DateExtension.swift in Sources */,
 				6E59429F2488F0360094B328 /* MBNewsController.swift in Sources */,
 				6EF2540124874297008BDD32 /* GMPresentationBaseController.swift in Sources */,
+				6E2C085724908A0D00D0ED39 /* MBOrderResultController.swift in Sources */,
 				6EAE50EF247A6E20005C169E /* MBUserDefault.swift in Sources */,
 				6EAE5111247A6FA2005C169E /* DictionaryExtension.swift in Sources */,
 				6E59428F24887F050094B328 /* MBUserCenterController.swift in Sources */,
@@ -821,6 +870,7 @@
 				6EF2540424874298008BDD32 /* GMLabel.swift in Sources */,
 				6E7E2E04248632A900F39344 /* MBApplication.swift in Sources */,
 				6EAE5107247A6FA2005C169E /* UINavigationBarEx.swift in Sources */,
+				6E2C084A24907F3000D0ED39 /* HAScheduleDatePicker.swift in Sources */,
 				6EF2540224874297008BDD32 /* GMPresentationBaseNavController.swift in Sources */,
 				6EAE510C247A6FA2005C169E /* UIViewControllerExtension.swift in Sources */,
 				E5BA85BD247A540500AAECDB /* AppDelegate.swift in Sources */,
@@ -832,10 +882,12 @@
 				6EAE5109247A6FA2005C169E /* UIImageViewExtension.swift in Sources */,
 				6EAE50DD247A677E005C169E /* MBBaseController.swift in Sources */,
 				6E7E2E0E248637B100F39344 /* MBUserCenter.swift in Sources */,
+				6E2C084224907DE300D0ED39 /* MBSchedulesController.swift in Sources */,
 				6E7E2E0C2486370700F39344 /* MBRegisterController.swift in Sources */,
 				6EF2540324874297008BDD32 /* GMPresentationAnimator.swift in Sources */,
 				6E58A7D3248FBE7C0059CA3E /* Schedules.swift in Sources */,
 				6EAE510D247A6FA2005C169E /* UIViewExtension.swift in Sources */,
+				6E2C0855249088E200D0ED39 /* MBConfirmController.swift in Sources */,
 				6E5942A32488F0540094B328 /* MBHomeController.swift in Sources */,
 				6E7E2E022485DCAC00F39344 /* UserTable.swift in Sources */,
 			);

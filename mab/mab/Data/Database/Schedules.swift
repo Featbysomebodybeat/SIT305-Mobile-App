@@ -19,8 +19,8 @@ struct Schedule: HandyJSON {
 
 struct SchedulesTable {
     
-    static func getSchedules(date: String = "", completion: ((_ users: [Schedule]) -> Void)?) {
-        let sql = date.isEmpty ? "select * from schedules" : "select * from schedules where date=\(date)"
+    static func getSchedules(hosCode: String, date: String = "", completion: ((_ users: [Schedule]) -> Void)?) {
+        let sql = date.isEmpty ? "select * from schedules where hosCode=\(hosCode)" : "select * from schedules where hosCode=\(hosCode) and date=\(date)"
         MBDatabaseManager.query(sql, params: nil) { (resultSet) in
             var tmp = [Schedule]()
             if let set = resultSet {

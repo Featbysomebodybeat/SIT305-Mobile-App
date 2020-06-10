@@ -30,22 +30,22 @@ extension Date {
     }
     
     /// transfer
-    public func weekDayEnglishName(preFix: String = "week") -> String {
+    public func weekDayEnglishName(preFix: String = "") -> String {
         switch self.weekday {
         case 1:
-            return preFix + "Sunday"
+            return preFix + "Sun"
         case 2:
-            return preFix + "Monday"
+            return preFix + "Mon"
         case 3:
-            return preFix + "Tuesday"
+            return preFix + "Tue"
         case 4:
-            return preFix + "Wednesday"
+            return preFix + "Wed"
         case 5:
-            return preFix + "Thursday"
+            return preFix + "Thu"
         case 6:
-            return preFix + "Friday"
+            return preFix + "Fri"
         case 7:
-            return preFix + "Saturaday"
+            return preFix + "Sat"
         default:
             return "000"
         }

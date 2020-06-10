@@ -10,6 +10,8 @@ import UIKit
 
 class MBCategoryController: MBBaseController {
 
+    var hos = Hospital()
+    
     /// list
     @IBOutlet weak var listView: UITableView!
     
@@ -40,8 +42,10 @@ extension MBCategoryController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+        let pushVC = MBSchedulesController.instanceFromStoryboard(named: MBStoryboard.home)
+        pushVC.hos = hos
+        pushVC.categoty = categories[indexPath.row]
+        push(pushVC)
     }
     
 }

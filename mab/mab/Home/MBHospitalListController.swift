@@ -54,6 +54,7 @@ extension MBHospitalListController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = hospitals[indexPath.row]
         let pushVC = MBCategoryController.instanceFromStoryboard(named: MBStoryboard.home)
+        pushVC.hos = data
         push(pushVC)
     }
     
