@@ -69,20 +69,20 @@ extension MBUserCenter {
     /// sign up
     func signUp(_ user: UserInfo, completion: ((Result<UserInfo, SQLError>)->Void)?) {
         
-        UserInfoTable.judge(by: user.phone) { [weak self] (esist) in
-            if esist {
-                completion?(.failure(.userExist))
-            }else {
-                self?.save(user: user, completion: completion)
-            }
-        }
-//        UserInfoTable.query(by: user.phone) { [weak self] (users) in
-//            if users.first != nil {
+//        UserInfoTable.judge(by: user.phone) { [weak self] (esist) in
+//            if esist {
 //                completion?(.failure(.userExist))
 //            }else {
 //                self?.save(user: user, completion: completion)
 //            }
 //        }
+        UserInfoTable.query(by: user.phone) { [weak self] (users) in
+            if users.first != nil {
+                completion?(.failure(.userExist))
+            }else {
+                self?.save(user: user, completion: completion)
+            }
+        }
         
     }
     
@@ -93,7 +93,7 @@ extension MBUserCenter {
         UserInfoTable.query(by: phone) { [weak self] (users) in
             if let user = users.first {
                 if user.phone == phone {
-                    if user.pwd == pwd {
+                    if user.password == pwd {
                         // save login info
                         self?.userSignInfo = user
                         completion?(.success(user))

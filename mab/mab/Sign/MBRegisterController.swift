@@ -33,7 +33,7 @@ class MBRegisterController: MBBaseController {
         var user = UserInfo()
         user.name = nameField.text ?? ""
         user.phone = phoneField.text ?? ""
-        user.pwd = pwdField.text ?? ""
+        user.password = pwdField.text ?? ""
         
         showLoading()
         MBUserCenter.shared.signUp(user) { [weak self] (result) in

@@ -35,10 +35,25 @@
                     <view key="view" contentMode="scaleToFill" id="2xl-zE-x05">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dT0-p0-Ecb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9NV-xC-wG8" firstAttribute="bottom" secondItem="dT0-p0-Ecb" secondAttribute="bottom" id="8EX-NN-x3F"/>
+                            <constraint firstItem="dT0-p0-Ecb" firstAttribute="leading" secondItem="9NV-xC-wG8" secondAttribute="leading" id="QjL-26-zVR"/>
+                            <constraint firstItem="dT0-p0-Ecb" firstAttribute="top" secondItem="9NV-xC-wG8" secondAttribute="top" id="WIc-hO-lKe"/>
+                            <constraint firstItem="9NV-xC-wG8" firstAttribute="trailing" secondItem="dT0-p0-Ecb" secondAttribute="trailing" id="fX8-J6-ylD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9NV-xC-wG8"/>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="OLb-Qg-ydn"/>
+                    <connections>
+                        <outlet property="newsList" destination="dT0-p0-Ecb" id="81e-dn-uIy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Tf-lV-r1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,10 +66,47 @@
                     <view key="view" contentMode="scaleToFill" id="v36-Po-6TP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wM-fz-Clx" customClass="GMButton" customModule="mab" customModuleProvider="target">
+                                <rect key="frame" x="107" y="138" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="OkK-DW-2kV"/>
+                                    <constraint firstAttribute="width" secondItem="9wM-fz-Clx" secondAttribute="height" id="X2g-Se-XCQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <state key="normal" title="Book">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickedBookButton:" destination="MGq-aq-j2y" eventType="touchUpInside" id="aDh-9C-xZP"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eth-6G-utm">
+                                <rect key="frame" x="20" y="388" width="374" height="395"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9wM-fz-Clx" firstAttribute="top" secondItem="4Ey-dQ-faK" secondAttribute="top" constant="50" id="3IB-p1-JIn"/>
+                            <constraint firstItem="9wM-fz-Clx" firstAttribute="centerX" secondItem="v36-Po-6TP" secondAttribute="centerX" id="IU5-xE-Clf"/>
+                            <constraint firstItem="4Ey-dQ-faK" firstAttribute="trailing" secondItem="eth-6G-utm" secondAttribute="trailing" constant="20" id="XFv-wI-CA5"/>
+                            <constraint firstItem="4Ey-dQ-faK" firstAttribute="bottom" secondItem="eth-6G-utm" secondAttribute="bottom" constant="30" id="gri-ka-bg4"/>
+                            <constraint firstItem="eth-6G-utm" firstAttribute="leading" secondItem="4Ey-dQ-faK" secondAttribute="leading" constant="20" id="hDc-Qt-z3N"/>
+                            <constraint firstItem="eth-6G-utm" firstAttribute="top" secondItem="9wM-fz-Clx" secondAttribute="bottom" constant="50" id="tAm-76-IdD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Ey-dQ-faK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="kBS-ip-DLl"/>
+                    <connections>
+                        <outlet property="newsList" destination="eth-6G-utm" id="Ba8-xJ-1Qm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izK-Id-aOH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

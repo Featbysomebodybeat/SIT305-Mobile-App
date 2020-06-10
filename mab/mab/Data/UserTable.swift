@@ -12,45 +12,25 @@ import HandyJSON
 
 struct UserInfo: HandyJSON {
     var name = ""
-    var pwd = ""
+    var password = ""
     var phone = ""
-    var idNo = ""
     var medicare = ""
-    var icon = ""
-    var birthday = ""
 }
 
 struct UserInfoTable {
     
-    static func judge(by phone: String, completion: ((_ exist: Bool) -> Void)?) {
-        
-        let sql = "SELECT COUNT(name) AS countNum FROM USER_INFO WHERE phone=\(phone)"
-        
-        MBDatabaseManager.query(sql, params: nil) { (resultSet) in
-            if let set = resultSet {
-                while set.next() {
-                    let count = set.int(forColumn: "countNum")
-                    completion?(count > 0)
-                }
-            }
-        }
-    }
-    
     static func query(by phone: String, completion: ((_ users: [UserInfo]) -> Void)?) {
         
-        let sql = "select * from USER_INFO where phone=\(phone)"
+        let sql = "select * from users where phone=\(phone)"
         MBDatabaseManager.query(sql, params: nil) { (resultSet) in
             var tmp = [UserInfo]()
             if let set = resultSet {
                 while set.next() {
                     let name = set.string(forColumn: "name") ?? ""
-                    let pwd = set.string(forColumn: "pwd") ?? ""
+                    let pwd = set.string(forColumn: "password") ?? ""
                     let phone = set.string(forColumn: "phone") ?? ""
-                    let idNo = set.string(forColumn: "idNo") ?? ""
                     let medicare = set.string(forColumn: "medicare") ?? ""
-                    let icon = set.string(forColumn: "icon") ?? ""
-                    let birthday = set.string(forColumn: "birthday") ?? ""
-                    let user = UserInfo(name: name, pwd: pwd, phone: phone, idNo: idNo, medicare: medicare, icon: icon, birthday: birthday)
+                    let user = UserInfo(name: name, password: pwd, phone: phone, medicare: medicare)
                     tmp.append(user)
                 }
                 set.close()
@@ -61,14 +41,14 @@ struct UserInfoTable {
     }
     
     static func insert(_ user: UserInfo, completion: ((_ success: Bool) -> Void)?) {
-        let sql = "INSERT INTO USER_INFO (idNo, name, birthday, phone, icon, pwd, medicare) VALUES (?, ?, ?, ?, ?, ?, ?)"
+        let sql = "INSERT INTO users (name, phone, password, medicare) VALUES (:name, :phone, :password, :phone);"
         if let dic = user.toJSON() {
             MBDatabaseManager.update(sql, params: dic, completion: completion)
         }
     }
     
     static func update(_ user: UserInfo, completion: ((_ success: Bool) -> Void)?) {
-        let sql = "update USER_INFO set name=?, pwd=?, idNo=?, medicare=?, icon=?, birthday=? where phone=?"
+        let sql = "update users set name=?, password=?, medicare=? where phone=?"
         if let dic = user.toJSON() {
             MBDatabaseManager.update(sql, params: dic, completion: completion)
         }
@@ -76,7 +56,7 @@ struct UserInfoTable {
     }
     
     static func delete(_ user: UserInfo, completion: ((_ success: Bool) -> Void)?) {
-        let sql = "delete from USER_INFO where phone=?"
+        let sql = "delete from user_info where phone=?"
         
         if let dic = user.toJSON() {
             MBDatabaseManager.update(sql, params: dic, completion: completion)

@@ -88,5 +88,6 @@ struct MBStoryboard {
     static let sign = "Sign"
     /// user center
     static let userCenter = "UserCenter"
+    static let home = "Home"
     
 }

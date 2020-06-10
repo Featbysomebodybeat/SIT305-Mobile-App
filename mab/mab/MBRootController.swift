@@ -19,7 +19,14 @@ class MBRootController: MBBaseController {
     
     override func setup() {
         // to prepare datas
-        
+        MBDatabaseManager.copyDbFileToSandbox()
+        MBDatabaseManager.createTables { (success) in
+            if success {
+                DPrint("Create tables succeed")
+            }else {
+                DPrint("Create tables failed")
+            }
+        }
     }
     
     private func switchRoot() {
